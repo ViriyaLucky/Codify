@@ -4,21 +4,18 @@ import {MatCardModule} from '@angular/material/card';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
-import { HttpClient } from '@angular/common/http';
-import { PostcardComponent } from 'src/app/shared/components/postcard/postcard.component';
-import {MatIconModule} from '@angular/material/icon';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { SharedModuleModule } from 'src/app/shared/modules/shared-module/shared-module.module';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 
 
 @NgModule({
-  declarations: [HomeComponent,HeaderComponent, PostcardComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatCardModule,
-    MatIconModule,
-    ScrollingModule  ],
+    SharedModuleModule,
+    MaterialModule
+    ],
     providers:[DatePipe]
 })
 export class HomeModule { }

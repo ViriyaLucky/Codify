@@ -1,0 +1,16 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+.profile-image{
+  margin:auto;
+  margin-bottom: 20px;;
+}
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+

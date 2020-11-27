@@ -1,5 +1,5 @@
 export class Tag {
-    title?: string;
+    title: string;
 
     constructor(input:any){
         this.title = input

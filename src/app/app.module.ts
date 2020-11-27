@@ -10,7 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
-import { PostcardComponent } from './shared/components/postcard/postcard.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatChipsModule } from '@angular/material/chips';
+import { MaterialModule } from './shared/modules/material/material.module';
 
 
 @NgModule({
@@ -24,9 +27,8 @@ import { PostcardComponent } from './shared/components/postcard/postcard.compone
     UserModule,
     PostModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     HttpClientModule ,
-    MatCardModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
