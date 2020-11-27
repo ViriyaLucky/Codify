@@ -1,0 +1,38 @@
+.card {
+    max-width: 600px;
+    margin:auto;
+  }
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+
+  cdk-virtual-scroll-viewport {
+    height: 100vh;
+  
+    li {
+      height: 100px;
+    }
+  
+    // Bonus points
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+  
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(238, 169, 79);
+    }
+  }
