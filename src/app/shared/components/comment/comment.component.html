@@ -1,0 +1,15 @@
+<mat-divider [inset]="true"></mat-divider>
+<mat-card class="comment-card">
+    <mat-card-header>
+        <div (click)="showUserProfile(comment.owner.id)" mat-card-avatar class="comment-header-image" style="background-image: url({{comment.owner.picture}});
+        background-size: cover;"></div>
+        <mat-card-title class="comment-title" (click)="showUserProfile(comment.owner.id)">{{comment.owner.firstName + " " +  comment.owner.lastName}}</mat-card-title>
+        <mat-card-subtitle class="comment-subtitle">{{publishDate}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="comment-content" >
+        <p>
+        {{comment.message}}
+        </p>
+    </mat-card-content>
+</mat-card>
+<mat-divider [inset]="true"></mat-divider>

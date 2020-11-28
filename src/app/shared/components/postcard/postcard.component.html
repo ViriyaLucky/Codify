@@ -9,16 +9,17 @@
     </mat-card-header>
     <img mat-card-image src={{post.image}} alt="image">
     <mat-card-content>
-      <mat-chip-list aria-label="tags">
+      <mat-chip-list aria-label="tags" style="margin-bottom: 5px;">
         <mat-chip  color="primary" selected *ngFor="let tag of post.tags" (click)=chooseCategory(tag.title)>
           {{tag.title}}
         </mat-chip>
       </mat-chip-list>
-      <div>
+      <div style="margin-top: 5px;">
+        <h3 class="likes">  <mat-icon style="font-size: inherit;"  aria-hidden="false" class="like-icon"  aria-label="heart">favorite</mat-icon>
+          {{post.likes + " people likes this"}}</h3>
+          <mat-divider [inset]="true"></mat-divider>
       </div>
-      <div>
-        <h4 class="likes"> <mat-icon aria-hidden="false" class="like-icon"  aria-label="heart">favorite</mat-icon> {{post.likes + " people likes this"}}</h4>
-      </div>
+      
       <p>
         {{post.text}}
       </p>
@@ -26,7 +27,16 @@
       <h5>{{this.publishDate}}</h5>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>View Comments</button>
-      <button mat-button>Add Comments</button>
+      <button class="button-show-comment" mat-stroked-button color="primary" (click)="showComments()">View Comments</button>
+      <mat-divider [inset]="true"></mat-divider>
+      <div *ngIf="isLoadingComment" class="content-comment-loading">
+        <mat-progress-spinner mode="indeterminate">
+        </mat-progress-spinner>
+      </div>
+      <div *ngIf="!isLoadingComment && showComment" class="comment-section" >
+        <app-comment  *ngFor="let comment of comments"  [comment]="comment" class="comment">
+        </app-comment>
+      </div>
     </mat-card-actions>
+
 </mat-card>

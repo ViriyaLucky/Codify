@@ -1,6 +1,11 @@
 <app-header>
 </app-header>
-<div class="content">
+<div *ngIf="isLoading" class="content-loading">
+  <mat-progress-spinner mode="indeterminate">
+  </mat-progress-spinner>
+  <h1>Loading data...</h1>
+</div>
+<div *ngIf="!isLoading" class="content">
     <mat-card class="example-card">
         <mat-card-header>
         <img class="profile-image" src={{userDetail.picture}} alt="image">

@@ -22,8 +22,8 @@ export class DummyServiceService {
 
     //TODO:change from localhost
     return this.http
-    // .get(this.baseUrl + "user", { observe: 'response', headers: header })
-    .get("assets/userList.sample", { observe: 'response', headers: header })
+    .get(this.baseUrl + "user", { observe: 'response', headers: header })
+    // .get("assets/userList.sample", { observe: 'response', headers: header })
 
   }
 
@@ -57,8 +57,8 @@ export class DummyServiceService {
   
     //TODO:change from localhost
     return this.http
-    // .get(this.baseUrl + urlCategory + "post", { observe: 'response', headers: header, params: params })
-    .get("assets/postList.sample", { observe: 'response', headers: header, params: params })
+    .get(this.baseUrl + urlCategory + "post", { observe: 'response', headers: header, params: params })
+    // .get("assets/postList.sample", { observe: 'response', headers: header, params: params })
   }
 
   getUserPost(pages:number,id :String | null ) : Observable<any>{
@@ -73,11 +73,17 @@ export class DummyServiceService {
    
     //TODO:change from localhost
     return this.http
-    // .get(this.baseUrl + "user/"  + id + "/post", { observe: 'response', headers: header, params: params })
-    .get("assets/userDetailPosts.sample", { observe: 'response', headers: header, params: params }) 
+    .get(this.baseUrl + "user/"  + id + "/post", { observe: 'response', headers: header, params: params })
+    // .get("assets/userDetailPosts.sample", { observe: 'response', headers: header, params: params }) 
    }
-  getCommentsList(id:String){
+  getCommentsList(id:String)  : Observable<any>{
+    //set header with key
+    let header = new HttpHeaders();
+    header = header.set("app-id",this.headerKey );
 
+    return this.http
+    .get(this.baseUrl + "post/"  + id + "/comment", { observe: 'response', headers: header })
+    // .get("assets/commentPost.sample", { observe: 'response', headers: header }) 
   }
   getTagList(){
     

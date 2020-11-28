@@ -1,5 +1,6 @@
 <app-header>
 </app-header>
 <div class="content">
+  <h2 *ngIf="category">Showing category : {{category}}   <h3><a href="#" (click)="goHome()"> Clear filter</a></h3> </h2> 
   <post-card  (categoryClicked)="onCategoryClicked($event)" *ngFor="let post of newList" [post]="post"    ></post-card>
 </div>

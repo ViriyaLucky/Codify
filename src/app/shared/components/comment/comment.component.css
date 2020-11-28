@@ -1,0 +1,20 @@
+.comment-card {
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 1px;
+  }
+
+  .comment-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .comment-title{
+      font-size: 12px;
+  }
+  .comment-subtitle{
+    font-size: 12px;
+}
+  .comment-content{
+    font-size: 11px;
+}

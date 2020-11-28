@@ -2,6 +2,7 @@ import { Tag } from './tag.model';
 import { User } from './user.model';
 
 export class Post {
+    id:string = '';
     text: string='';
     image: string='';
     likes: number=0;
