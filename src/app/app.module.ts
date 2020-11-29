@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './shared/modules/material/material.module';
+import { SharedModuleModule } from './shared/modules/shared-module/shared-module.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { MaterialModule } from './shared/modules/material/material.module';
     BrowserAnimationsModule,
     HttpClientModule ,
     MaterialModule,
+    SharedModuleModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

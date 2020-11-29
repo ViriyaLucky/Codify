@@ -1,8 +1,7 @@
 import { Component, OnInit, HostListener  } from '@angular/core';
 import { DummyServiceService } from 'src/app/services/dummy-service.service';
 import { Post } from 'src/app/shared/models/post.model';
-import { CollectionViewer, DataSource } from '@angular/cdk/collections';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +9,8 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit  {
-
   newList:Post[] = [];
-  isRequestingData:boolean = false;
+  isRequestingData:boolean = true;
   category:string = "";
   prevCategory : string = "";
   pages=0;
@@ -34,8 +32,8 @@ export class HomeComponent implements OnInit  {
 
       }else{
         this.getPostList();
-
       }
+
     }
   }
 
@@ -55,7 +53,6 @@ export class HomeComponent implements OnInit  {
             this.prevCategory = this.category;
             this.getPostList();
           }
-
         }
       )
     }
@@ -67,7 +64,6 @@ export class HomeComponent implements OnInit  {
     .subscribe(resp => {
       const body = { ... resp.body };
       let postList = body.data;
-      // console.log(jsonpost);
       postList.forEach((element: any) => {
         let stat = new Post().deserialize(element);
         this.newList.push(stat);

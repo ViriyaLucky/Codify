@@ -9,14 +9,15 @@ const routes: Routes = [
     path: '', pathMatch: 'full', redirectTo: 'user-list'
 
    },
-  {
-    path: ':id',
-    component: UserDetailComponent
-   },
    {
     path: 'user-list',
     component:UserListComponent
    },
+  {
+    path: ':id',
+    component: UserDetailComponent
+   },
+  
    {
     path: ':id/posts',
     component:UserPostsComponent

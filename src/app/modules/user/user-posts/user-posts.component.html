@@ -1,5 +1,8 @@
-<app-header>
-</app-header>
 <div class="content">
   <post-card  (categoryClicked)="onCategoryClicked($event)" *ngFor="let post of newList" [post]="post"></post-card>
+</div>
+<div *ngIf="isLoading" class="content-loading">
+  <mat-progress-spinner mode="indeterminate">
+  </mat-progress-spinner>
+  <h1>Loading data...</h1>
 </div>

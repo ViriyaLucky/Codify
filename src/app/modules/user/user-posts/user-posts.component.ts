@@ -16,6 +16,7 @@ export class UserPostsComponent implements OnInit  {
   isRequestingData:boolean = false;
   category:string = "";
   pages=0;
+  isLoading:boolean = true;
   userId:string | null = '';
   constructor(private route: ActivatedRoute,private ds:DummyServiceService) {
   
@@ -60,6 +61,7 @@ export class UserPostsComponent implements OnInit  {
         });
       this.pages++;
       this.isRequestingData = false;
+      this.isLoading = false;
       // console.log(this.newList);
     });
 

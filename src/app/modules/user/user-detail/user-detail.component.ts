@@ -19,11 +19,9 @@ export class UserDetailComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.userId = params.get('id');
-        console.log(this.userId)
       }
     )
     this.userId = this.route.snapshot.paramMap.get("id") ;
-    console.log(this.userId)
     this.getUserDetail();
   }
 
@@ -32,7 +30,6 @@ export class UserDetailComponent implements OnInit {
       const body = { ... resp.body };
       this.userDetail = this.userDetail.deserialize(body);
       this.isLoading = false;
-      console.log(this.userDetail);
     });
   }
   uppercaseLetter(text:string){

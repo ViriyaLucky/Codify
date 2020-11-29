@@ -1,1 +1,12 @@
-<p>user-list works!</p>
+<div *ngIf="isLoading" class="content-loading">
+    <mat-progress-spinner mode="indeterminate">
+    </mat-progress-spinner>
+    <h1>Loading data...</h1>
+  </div>
+  <div *ngIf="!isLoading" class="content">
+   <div class="contents">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+         <user-list-card fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let user of userList"  [user] ="user" ></user-list-card>
+      </div>
+   </div>
+</div>  
