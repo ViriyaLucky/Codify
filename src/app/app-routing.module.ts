@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './modules/about/about.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},  
@@ -14,6 +15,10 @@ const routes: Routes = [
    {
     path: 'post',
     loadChildren: () => import('./modules/post/post.module').then(m => m.PostModule)
+   },
+   {
+    path: 'about',
+    component:AboutComponent
    }
 ];
 @NgModule({
