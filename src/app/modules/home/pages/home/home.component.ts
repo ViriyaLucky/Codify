@@ -76,7 +76,8 @@ export class HomeComponent implements OnInit  {
       .subscribe(resp => {
         const body = { ... resp.body };
         let postList = body.data;
-        if(postList == null){
+        console.log(postList);
+        if(postList.length < 1){
           this.doneRequest=true;
         }else{
           postList.forEach((element: any) => {
@@ -96,6 +97,7 @@ export class HomeComponent implements OnInit  {
       this.newList = [];
       this.pages = 0;
       window.scroll(0,0);
+      this.doneRequest=false;
       this.getPostList();
   }
 
