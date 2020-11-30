@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit  {
   category:string = "";
   prevCategory : string = "";
   pages=0;
+  doneRequest:boolean = false;
 
   constructor( private route: ActivatedRoute,     
     private router: Router, 
@@ -34,7 +35,12 @@ export class HomeComponent implements OnInit  {
       if(this.isRequestingData){
 
       }else{
-        this.getPostList();
+        if( this.doneRequest){
+
+        }else{
+          this.getPostList();
+
+        }
       }
 
     }
@@ -62,19 +68,26 @@ export class HomeComponent implements OnInit  {
 
   //call service to get post list and set flag isRequestingData to true
   getPostList(){
-    this.isRequestingData = true;
-    this.ds.getPostList(this.pages, this.category)// resp is of type `HttpResponse<Config>`
-    .subscribe(resp => {
-      const body = { ... resp.body };
-      let postList = body.data;
-      postList.forEach((element: any) => {
-        let stat = new Post().deserialize(element);
-        this.newList.push(stat);
-        });
-      this.pages++;
-      this.isRequestingData = false;
-    });
+    if(this.doneRequest){
 
+    }else{
+      this.isRequestingData = true;
+      this.ds.getPostList(this.pages, this.category)// resp is of type `HttpResponse<Config>`
+      .subscribe(resp => {
+        const body = { ... resp.body };
+        let postList = body.data;
+        if(postList == null){
+          this.doneRequest=true;
+        }else{
+          postList.forEach((element: any) => {
+            let stat = new Post().deserialize(element);
+            this.newList.push(stat);
+            });
+        }
+        this.pages++;
+        this.isRequestingData = false;
+      });
+    }
   }
   
   //when choose category, reset list and page
