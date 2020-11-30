@@ -2,7 +2,7 @@
   <h2 *ngIf="category">Showing category : {{category}}   <h3><a href="#" (click)="goHome()"> Clear filter</a></h3> </h2> 
   <post-card  (categoryClicked)="onCategoryClicked($event)" *ngFor="let post of newList" [post]="post"    ></post-card>
 </div>
-<div *ngIf="isRequestingData" class="content-loading">
+<div *ngIf="isRequestingData && pages < 1" class="content-loading">
   <mat-progress-spinner mode="indeterminate">
   </mat-progress-spinner>
   <h1>Loading data...</h1>
@@ -11,3 +11,4 @@
   <mat-progress-spinner mode="indeterminate">
   </mat-progress-spinner>
 </div>
+<app-fab-tags></app-fab-tags>

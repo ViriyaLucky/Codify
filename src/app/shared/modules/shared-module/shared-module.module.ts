@@ -9,18 +9,20 @@ import { SidenavListComponent } from '../../components/sidenav-list/sidenav-list
 import { RouterModule } from '@angular/router';
 import { UsercardComponent } from '../../components/usercard/usercard.component';
 import { UserListCardComponent } from '../../components/user-list-card/user-list-card.component';
+import { FabTagsComponent } from '../../components/fab-tags/fab-tags.component';
+import { TagModalComponent } from '../../components/tag-modal/tag-modal.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, PostcardComponent, CommentComponent,     SidenavListComponent, UsercardComponent,UserListCardComponent  ],
+  declarations: [HeaderComponent, PostcardComponent, CommentComponent,     SidenavListComponent, UsercardComponent,UserListCardComponent, FabTagsComponent,TagModalComponent  ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     RouterModule 
   ],
-  exports: [ HeaderComponent, PostcardComponent, MaterialModule, CommentComponent,FlexLayoutModule, SidenavListComponent,UserListCardComponent, RouterModule, UsercardComponent],
+  exports: [ HeaderComponent, PostcardComponent, MaterialModule, CommentComponent,FlexLayoutModule, SidenavListComponent,UserListCardComponent, FabTagsComponent, TagModalComponent, RouterModule, UsercardComponent],
 
 })
 export class SharedModuleModule { }

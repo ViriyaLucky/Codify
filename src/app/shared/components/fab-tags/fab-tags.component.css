@@ -1,0 +1,36 @@
+section {
+    display: table;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .fab-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .fab-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .fab-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .fab-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .fab-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }

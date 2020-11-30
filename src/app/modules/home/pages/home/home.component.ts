@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener  } from '@angular/core';
+import { Component, OnInit, HostListener, Inject  } from '@angular/core';
 import { DummyServiceService } from 'src/app/services/dummy-service.service';
 import { Post } from 'src/app/shared/models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +14,10 @@ export class HomeComponent implements OnInit  {
   category:string = "";
   prevCategory : string = "";
   pages=0;
-  constructor( private route: ActivatedRoute,     private router: Router, private ds:DummyServiceService) {
+
+  constructor( private route: ActivatedRoute,     
+    private router: Router, 
+    private ds:DummyServiceService) {
   
   }
 
@@ -91,4 +94,6 @@ export class HomeComponent implements OnInit  {
     window.scroll(0,0);
     this.getPostList();
   }
+
+
 }

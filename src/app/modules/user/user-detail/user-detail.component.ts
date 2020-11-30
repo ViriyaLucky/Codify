@@ -32,6 +32,8 @@ export class UserDetailComponent implements OnInit {
       this.isLoading = false;
     });
   }
+
+  //convert text to uppercase
   uppercaseLetter(text:string){
     if (!text) return text;
     return text[0].toUpperCase() + text.substr(1).toLowerCase(); 

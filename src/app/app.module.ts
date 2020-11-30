@@ -13,12 +13,14 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { SharedModuleModule } from './shared/modules/shared-module/shared-module.module';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './modules/about/about.component';
+import { ScrollToTopComponent } from './shared/components/scroll-to-top/scroll-to-top.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     BrowserModule,

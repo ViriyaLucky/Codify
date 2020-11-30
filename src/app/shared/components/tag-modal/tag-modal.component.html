@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Choose tag that you want...</h1>
+<div mat-dialog-content>
+    <div *ngIf="isRequestingData" class="content-loading-extra">
+        <mat-progress-spinner mode="indeterminate">
+        </mat-progress-spinner>
+      </div>
+    <mat-chip-list *ngIf="!isRequestingData" aria-label="Fish selection">
+        <mat-chip *ngFor="let tag of tagList" color="primary" (click)="tagClick(tag.title)" selected >
+            {{tag.title}}
+        </mat-chip>
+      </mat-chip-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

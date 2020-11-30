@@ -67,7 +67,6 @@ export class UserPostsComponent implements OnInit  {
 
   }
   onCategoryClicked($event:string){
-      console.log($event);
       this.category = $event;
       this.newList = [];
       this.pages = 0;
